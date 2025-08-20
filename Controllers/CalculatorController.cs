@@ -6,10 +6,10 @@ namespace CalculatorAPI.Controllers
     [Route("api/[controller]")]
     public class CalculatorController : ControllerBase
     {
-        [HttpGet("sum")]
-        public ActionResult<double> Sum([FromQuery] double a, [FromQuery] double b)
+        [HttpGet(template: "sum")]
+        public IActionResult GetSum([FromQuery] int a, [FromQuery] int b)
         {
-            return Ok(a + b);
+            var result = a + b;
+            return Ok( new {a, b,result} );}
         }
     }
-}
