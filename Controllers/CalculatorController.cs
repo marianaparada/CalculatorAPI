@@ -10,6 +10,8 @@ namespace CalculatorAPI.Controllers
         public IActionResult GetSum([FromQuery] int a, [FromQuery] int b)
         {
             var result = a + b;
-            return Ok( new {a, b,result} );}
+            return Ok(new { a, b, result });
         }
     }
+}
+
